@@ -43,6 +43,7 @@ width:100%;
     display:flex;
     flex-direction: column;
     margin-bottom: 25px;
+    
 
 }
 
@@ -57,8 +58,8 @@ margin-bottom: 20px;
 .input-group input{
     outline: 0;
     padding-bottom: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
+    font-family: 'Poppins', sans-serif;
+        font-size: large;
    
 }
 .input-group input:focus {
