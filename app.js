@@ -3,11 +3,16 @@ const username = document.querySelector("#username");
 const email = document.querySelector("#Email");
 const password = document.querySelector("#Password");
 const cpassword = document.querySelector("#Cpassword");
+const registerButton = document.getElementById('registerBtn');
+
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (validateInputs()) {
-        form.submit(); // submit the form if validation is successful
+        
+        alert("Successfully Registered!");
+        form.reset(); 
+        clearAllSuccessMessages(); 
     }
 });
 
@@ -18,12 +23,14 @@ function validateInputs() {
     const cpasswordVal = cpassword.value.trim();
     let success = true;
 
+    
     if (usernameVal === "") {
         success = false;
         setError(username, "Username is required");
     } else {
         setSuccess(username);
     }
+
 
     if (emailVal === "") {
         success = false;
@@ -35,6 +42,7 @@ function validateInputs() {
         setSuccess(email);
     }
 
+    
     if (passwordVal === "") {
         success = false;
         setError(password, "Password is required");
@@ -45,6 +53,7 @@ function validateInputs() {
         setSuccess(password);
     }
 
+
     if (cpasswordVal === "") {
         success = false;
         setError(cpassword, "Confirm Password is required");
@@ -52,7 +61,8 @@ function validateInputs() {
         success = false;
         setError(cpassword, "Passwords do not match");
     } else {
-        setSuccess(cpassword);
+        setSuccess(cpassword);  
+        clearCPasswordError();
     }
 
     return success;
@@ -81,3 +91,16 @@ function validateEmail(email) {
         .toLowerCase()
         .match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
 }
+
+
+registerButton.addEventListener('click', function() {
+    const usernameVal = username.value.trim();
+    const emailVal = email.value.trim();
+    const passwordVal = password.value.trim();
+    const cpasswordVal = cpassword.value.trim();
+
+    
+    if (usernameVal === "" || emailVal === "" || passwordVal === "" || cpasswordVal === "") {
+        alert("Please fill out all required fields!");
+    }
+});
