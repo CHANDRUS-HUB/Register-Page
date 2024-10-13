@@ -1,16 +1,23 @@
 body{
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,5,240,1) 0%, rgba(1,184,236,1) 91%, rgba(0,212,255,1) 100%);
-margin: 0;
-font-family: 'poppins',sans-serif;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(5, 5, 240, 1) 0%, rgba(1, 184, 236, 1) 91%, rgba(0, 212, 255, 1) 100%);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 #form{
-width: 400px;
-margin: 20vh auto 0 auto;
-background-color: whitesmoke;
-border-radius: 5px;
-padding: 30px;
+    width: 500px;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 h1{
 text-align: center;
@@ -25,7 +32,7 @@ border-radius: 5px;
 padding: 20px;
 margin:  20px 0px;
 cursor: pointer;
-font-size: 20px;
+font-size: 25px;
 width:100%; 
 }
 
@@ -44,7 +51,7 @@ border-radius: 5px;
 font-size: 20px;
 margin-top: 20px;
 padding: 15px;
-border:1px solid rgb(34, 193, 195);
+border:2px solid rgb(34, 193, 195);
 margin-bottom: 20px;
 }
 .input-group input{
@@ -53,6 +60,9 @@ margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
    
+}
+.input-group input:focus {
+   border: 3px solid rgb(34, 193, 195); /* Change border color on focus */
 }
 
 .input-group .error {
@@ -67,4 +77,8 @@ margin-top: 5px;
 
 .input-group.error input{
     border: 1px solid rgb(206, 67, 67);
+}
+
+#form button:hover {
+    background-color:  hwb(180 0% 0%);
 }
