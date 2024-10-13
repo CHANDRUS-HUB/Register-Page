@@ -10,7 +10,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (validateInputs()) {
         
-        alert("Successfully Registered!");
+        
         form.reset(); 
         clearAllSuccessMessages(); 
     }
@@ -92,6 +92,15 @@ function validateEmail(email) {
         .match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
 }
 
+function clearCPasswordError() {
+    const inputGroup = cpassword.parentElement;
+    inputGroup.classList.remove("error");
+    const errorElement = inputGroup.querySelector(".error");
+    if (errorElement) {
+        errorElement.innerText = ""; // Clear the error message
+    }
+}
+
 
 registerButton.addEventListener('click', function() {
     const usernameVal = username.value.trim();
@@ -102,5 +111,8 @@ registerButton.addEventListener('click', function() {
     
     if (usernameVal === "" || emailVal === "" || passwordVal === "" || cpasswordVal === "") {
         alert("Please fill out all required fields!");
+    }
+    else {
+        alert("Successfully Registered!");
     }
 });
